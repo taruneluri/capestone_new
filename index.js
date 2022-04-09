@@ -1,0 +1,11 @@
+const express=require('express');
+const mongoose=require('mongoose');
+const app=express();
+const indexpage=require('./controller/index');
+const homepage=require('./home');
+app.use(express.static('resto'));
+app.get('/home',homepage);
+app.get('/',homepage);
+app.get('/login',homepage);
+app.get('/register',homepage);
+app.listen(3000,()=>{console.log("server started")});
